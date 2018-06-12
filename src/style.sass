@@ -1,0 +1,451 @@
+@import "style_modules/reset"
+@import "style_modules/global_vars"
+@import "style_modules/fonts"
+@import "style_modules/typography"
+@import "style_modules/menu"
+@import "style_modules/burger"
+@import "style_modules/animations"
+    
+// helpers
+.text-center
+    text-align: center
+
+//main styles
+body
+    position: relative
+    overflow-x: hidden
+
+.row
+    display: flex
+    justify-content: center
+    min-width: 100%
+    box-sizing: border-box
+    &__grey
+        background: $grey-light
+        &--h-fixed
+            @media screen and (min-width: $tablet-breakpoint)
+                height: 737px
+            @media screen and (min-width: $desktop-breakpoint)
+                height: 604px 
+    &__white
+        background: $white
+
+.container
+    max-width: $mobile-container
+    min-width: $mobile-container
+    @media screen and (min-width: $tablet-breakpoint)
+        max-width: $tablet-container
+        min-width: $tablet-container
+    @media screen and (min-width: $desktop-breakpoint)
+        max-width: $desktop-container
+        min-width: $desktop-container
+    &__header
+        box-sizing: border-box
+        padding-top: 15vh
+        padding-bottom: 5vh
+        height: 100vh
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        align-items: center
+        color: white
+        p
+            width: 291px
+            @media screen and (min-width: $tablet-breakpoint)
+                width: 603px
+    &__first
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media screen and (min-width: $tablet-breakpoint)
+            position: relative
+            display: block
+    &__second
+        display: flex
+        flex-direction: column
+        align-items: center
+        box-sizing: border-box
+        justify-content: space-between
+        height: 1164px
+        padding: 42px 0
+        @media screen and (min-width: $tablet-breakpoint)
+            height: 914px
+            padding: 200px 0 99px 0
+        @media screen and (min-width: $desktop-breakpoint)
+            height: 719px
+            padding: 224px 0 84px 0
+    &__third
+        display: flex
+        flex-direction: column
+        align-items: center
+        box-sizing: border-box
+        // justify-content: space-between
+        // height: 832px
+        padding: 42px 0 0 0           
+        @media screen and (min-width: $tablet-breakpoint)
+            position: relative
+            display: block
+            height: 616px
+        @media screen and (min-width: $desktop-breakpoint)
+            height: 626px
+    &__contact
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media screen and (min-width: $tablet-breakpoint)
+            padding: 201px 20px 72px 20px
+        @media screen and (min-width: $desktop-breakpoint)
+            box-sizing: border-box
+            flex-direction: row
+            height: 620px
+            padding: 105px 0 95px 0
+    &__nav
+        display: flex
+        align-items: center
+        justify-content: space-between
+        @media screen and (max-width: $tablet-breakpoint)
+            min-width: 95%
+    
+nav
+    padding: 10px 16px
+    height: $nav-height
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 2
+    &.nav-show
+        background-color: $blue
+        box-shadow: $shadow
+
+.logo-img
+    height: 32px
+    width: 28px
+    object-fit: cover
+    object-position: 0% 50%
+    @media screen and (min-width: $desktop-breakpoint)
+        width: initial
+
+header
+    box-sizing: border-box
+    background: url("../assets/images/pp-main-background.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+
+.header-content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    min-height: 60vh
+
+button
+    padding: 12px 55px
+    width: 100%
+    background: $green
+    color: $white
+    border: none
+    transition: box-shadow 0.2s ease-in-out
+    align-self: center 
+    border-radius: 2px
+    &:hover
+        box-shadow: $shadow
+    @media screen and (min-width: $tablet-breakpoint)
+        width: fit-content
+        padding: 15px 91px
+        align-self: auto 
+    .send-button
+        margin: 8px 0
+
+//round icon in header
+.icon-round
+    font-size: 14px
+    width: 14px
+    height: 14px
+    border: 2px solid rgba(255, 255, 255, 0.7)
+    padding: 9px 9px 8px 9px
+    text-align: center
+    color: rgba(255, 255, 255, 0.7)
+    border-radius: 50%
+    transition: all 0.2s ease-in-out
+
+
+// stacked containers
+//container with main text content
+.stacked-content
+    background: $white
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    border-radius: 4px
+    box-sizing: border-box
+    box-shadow: $shadow
+    padding: 16px
+    width: 304px
+    height: 470px
+    order: -1
+    z-index: 1
+    margin: 42px 8px -36px 8px
+    @media screen and (min-width: $tablet-breakpoint)
+        border-radius: 2px
+        position: absolute
+        bottom: 191px
+        left: 0
+        padding: 30px
+        width: 504px
+        height: 474px
+        margin: 0
+    @media screen and (min-width: $desktop-breakpoint)
+        bottom: 67px
+        left: 0
+        padding: 48px
+        width: 600px
+        height: 421px
+    &--third
+        width: 304px
+        height: 382px
+        @media screen and (min-width: $tablet-breakpoint)
+            bottom: 189px
+            left: 0
+            width: 600px
+            height: 360px
+        @media screen and (min-width: $desktop-breakpoint)
+            bottom: 143px
+            left: 0
+            width: 610px
+            height: 380px
+    &__header
+        color: $grey
+    &__intro
+        &--prizes
+            text-align: center
+            width: 80%
+            @media screen and (min-width: $tablet-breakpoint)
+                width: 70%
+            @media screen and (min-width: $desktop-breakpoint)
+                width: 50%
+            @media screen and (max-width: $tablet-breakpoint)
+                padding: 12px
+    &__features
+        display: flex
+        flex-direction: column
+        align-items: center
+        @media screen and (min-width: $tablet-breakpoint)
+            flex-direction: row  
+            flex-wrap: wrap
+            justify-content: center
+        @media screen and (min-width: $desktop-breakpoint)
+            flex-wrap: nowrap
+            justify-content: space-between
+        &__feature
+            display: grid
+            grid-template-rows: auto auto auto
+            justify-items: center
+            width: 50%
+            cursor: default
+            transition: all 0.2s ease-in-out
+            &:hover
+                h2
+                    color: $green
+            @media screen and (min-width: $tablet-breakpoint)
+                grid-template-rows: 1fr 2fr 1fr
+                width: 30%
+            @media screen and (min-width: $desktop-breakpoint)
+                width: 16%
+            @media screen and (max-width: $tablet-breakpoint)
+                padding: 12px
+            h2
+                color: $grey
+                transition: all 0.2s ease-in-out
+            p
+                font-family: $RalewayBold
+                text-align: center
+                @media screen and (max-width: $tablet-breakpoint)
+                    padding-top: 12px 
+
+//container with photo
+.stacked-img
+    background: url("../assets/images/pp-foosball-match.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    width: 100vw
+    height: 100vw
+    @media screen and (min-width: $tablet-breakpoint)
+        border-radius: 2px
+        position: absolute
+        bottom: -129px
+        left: 31px
+        width: 512px
+        height: 320px
+    @media screen and (min-width: $desktop-breakpoint)
+        position: absolute
+        bottom: -46px
+        right: 0px
+        left: auto
+        width: 693px
+        height: 462px
+
+//green container
+.stacked-extra
+    background: $green
+    color: $white
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    box-sizing: border-box
+    @media screen and (max-width: $tablet-breakpoint)
+        border-radius: 2px
+        width: 100vw
+        height: 334px
+        padding: 37px 0
+    @media screen and (min-width: $tablet-breakpoint)
+        position: absolute
+        width: 254px
+        height: 454px
+        right: 0px
+        bottom: 87px
+        padding: 42px 48px 42px 75px
+    @media screen and (min-width: $desktop-breakpoint)
+        left: 65px
+        bottom: -157px
+        width: 500px
+        height: 224px
+        padding: 40px
+    &--third
+        height: initial
+        padding-top: 72px
+        box-sizing: content-box
+        justify-content: flex-start
+        p:nth-child(1)
+                margin: 0 16px 34px 16px
+                position: relative
+                letter-spacing: -0.2px
+                i
+                    position: absolute
+                    top: 5px
+                    right: 20%
+                    transform: scale(2)
+                    opacity: 0.5
+        @media screen and (min-width: $tablet-breakpoint)
+            box-sizing: border-box
+            position: absolute
+            display: flex
+            justify-content: space-between
+            left: auto
+            right: 0px
+            bottom: -129px
+            width: 628px
+            height: 378px
+            padding: 102px 30px 45px 84px
+            p:nth-child(1)
+                margin: 0
+                position: relative
+                letter-spacing: -0.2px
+                i
+                    position: absolute
+                    top: 5px
+                    left: -50px
+                    right: auto
+                    transform: scale(1.4)
+                    opacity: 0.5
+        @media screen and (min-width: $desktop-breakpoint)
+            bottom: 94px
+            width: 658px
+            height: 362px
+            padding: 41px 41px 41px 143px
+            p:nth-child(1)
+                letter-spacing: -0.3px
+    &__header
+        text-align: center
+    &__content
+        display: flex
+        justify-content: space-between
+        align-content: center
+        text-align: center
+        @media screen and (max-width: $desktop-breakpoint)
+            flex-direction: column
+            height: 80%
+        @media screen and (min-width: $desktop-breakpoint)
+            flex-direction: row
+        &__item
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            @media screen and (min-width: $desktop-breakpoint)
+                width: 25%
+.caption
+    display: grid
+    grid-template-areas: "photo name" "photo role"
+    grid-template-columns: 48px auto
+    grid-gap: 0 16px
+    margin: 0 8px
+    @media screen and (min-width: $tablet-breakpoint)
+        margin: 0
+    @media screen and (min-width: $desktop-breakpoint)
+        grid-template-columns: 64px auto
+        grid-gap: 0 17px
+    &__photo
+        background: $white
+        border-radius: 50%
+        grid-area: photo
+        height: 48px
+        width: 48px
+        @media screen and (min-width: $desktop-breakpoint)
+            height: 64px
+            width: 64px
+    &__name
+        text-transform: capitalize
+        grid-area: name
+        align-self: end
+    &__role
+        grid-area: role
+        white-space: nowrap
+
+.contact-image
+    height: 240px
+    width: 100vw
+    background: url("../assets/images/pp-office.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    @media screen and (min-width: $tablet-breakpoint)
+        height: 360px
+        width: 100%
+    @media screen and (min-width: $tablet-breakpoint)
+        height: 420px
+
+.contact-form
+    padding: 43px 16px
+    display: flex
+    flex-direction: column
+    @media screen and (min-width: $tablet-breakpoint)
+        width: 100%
+        padding: 30px
+        box-sizing: border-box
+    &__item
+        border: none
+        border-bottom: 1px solid $grey
+        outline: none
+        font-family: $RalewayRegular
+        font-size: 14px
+        color: $grey
+        padding: 10px
+        margin: 8px 0
+        &:focus
+            border-color: $green
+        @media screen and (min-width: $tablet-breakpoint)
+            margin: 12px 0
+        &--textarea
+            border-radius: 2px
+            border: 1px solid $grey
+            background: $grey-light
+footer
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $white
+    width: 100vw
+    background: $blue
+    height: 84px
+    @media screen and (min-width: $tablet-breakpoint)
+        height: 104px
+

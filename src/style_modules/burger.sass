@@ -1,0 +1,28 @@
+@import "style_modules/global_vars"
+
+.burger
+    @media screen and (min-width: $desktop-breakpoint)
+        display: none
+    .line
+        width: $mobile-burger-size
+        height: $mobile-burger-size*0.1
+        background-color: #fff
+        margin: $mobile-burger-size*0.16 auto
+        transition: all 0.3s ease-in-out
+        cursor: pointer
+        @media screen and (min-width: $tablet-breakpoint)
+            width: $tablet-burger-size
+            height: $tablet-burger-size*0.1
+            margin: $tablet-burger-size*0.16 auto
+    &.burger--active .line
+        &:nth-child(2)
+            opacity: 0
+            transform: translateX(-100px)
+        &:nth-child(1)
+            transform: translateY($mobile-burger-size*0.26) rotate(45deg)
+            @media screen and (min-width: $tablet-breakpoint)
+                transform: translateY($tablet-burger-size*0.26) rotate(45deg)
+        &:nth-child(3)
+            transform: translateY($mobile-burger-size*-0.26) rotate(-45deg)
+            @media screen and (min-width: $tablet-breakpoint)
+                transform: translateY($tablet-burger-size*-0.26) rotate(-45deg)
